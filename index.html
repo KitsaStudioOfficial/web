@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitsaStudio</title>
+    <style>
+        :root {
+            --accent: #00d2ff;
+            --accent-two: #3a7bd5;
+            --bg: #0b0e14;
+            --surface: #161b22;
+            --text: #e6edf3;
+            --text-dim: #8b949e;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            scroll-behavior: smooth;
+        }
+
+        /* Навигация */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 14, 20, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 90%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, var(--accent), var(--accent-two));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Главный экран */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        /* Проекты */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid #30363d;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            flex: 1;
+            min-width: 300px;
+            background: #21262d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            flex: 1;
+            padding: 40px;
+            min-width: 300px;
+        }
+
+        .tag {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-link-disabled {
+            display: inline-block;
+            margin-top: 20px;
+            color: #8b949e;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        /* Технологии */
+        .tech-stack {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0.6;
+            margin-top: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            border-top: 1px solid #30363d;
+            color: var(--text-dim);
+        }
+
+        .badge-io { background: #f1c40f; color: #000; }
+        .badge-video { background: #e74c3c; color: #fff; }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">KitsaStudio</div>
+        <div>
+            <a href="#projects" style="color: white; text-decoration: none;">Проекты</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Web. Games. <br><span style="color: var(--accent);">Experience.</span></h1>
+        <p>Разрабатываем веб-платформы и игры для пользователей.</p>
+        <div class="tech-stack">
+            <span>#JavaScript</span> <span>#Node.js</span> <span>#Canvas</span> <span>#WebSockets</span>
+        </div>
+    </header>
+
+    <div class="container" id="projects">
+        <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Наш стек продуктов</h2>
+
+        <div class="project-card">
+            <div class="project-img">📺</div>
+            <div class="project-content">
+                <span class="tag badge-video">Platform</span>
+                <h3>VibeTube</h3>
+                <p>Современная видеоплатформа с акцентом на сообщество и плавный интерфейс.</p>
+                <a href="//vibetube.kitsatudio.run.place" class="btn-link-disabled">Временно отключено →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img">🟢</div>
+            <div class="project-content">
+                <span class="tag badge-io">Multiplayer Game</span>
+                <h3>shuterok.io</h3>
+                <p>Динамичный 2D-шутер в реальном времени. Играй за боевую желейку, прокачивайся и доминируй на арене.</p>
+                <a href="//shuterok-io.kitsastudio.run.place" class="btn-link">Играть сейчас →</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2019-2025</p>
+    </footer>
+
+</body>
+</html>
