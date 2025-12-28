@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /scari
+Disallow: /topsecret
+
+Sitemap: https://kitsastudio.run.place/sitemap.xml
